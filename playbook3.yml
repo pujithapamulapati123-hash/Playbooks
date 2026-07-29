@@ -1,0 +1,12 @@
+---
+- name: creating file on servers
+  hosts: all
+  tasks: 
+   - name: creating file
+     file:
+       name: /tmp/file10
+       state: touch
+       owner: thrisha
+       group: thrisha
+       mode: 751
+...       

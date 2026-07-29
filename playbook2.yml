@@ -1,0 +1,22 @@
+---
+- name: creating  multiple users on multiple servers
+  hosts: all
+  tasks: 
+    - name: creating users-1
+      user:
+       name: thrisha
+       password: thrisha
+       uid: 2333
+       comment: "she is the userone"
+       shell: /bin/bash
+       home: /tmp
+    - name: creating user -2
+      user:
+       name: kajalroy
+       password: thrisharoy
+       uid: 2458   
+       comment: "usertwo"
+       shell: /bin/bash
+       home: /tmp
+       
+...     

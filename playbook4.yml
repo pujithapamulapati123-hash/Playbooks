@@ -1,0 +1,10 @@
+---
+- name: Installing java on all servers
+  hosts: all
+  tasks: 
+    - name: Installing java
+      apt:
+       name: openjdk-21-jdk
+       state: present
+       update_cache: yes
+...         
