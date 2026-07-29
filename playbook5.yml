@@ -1,0 +1,13 @@
+---
+- name: creating an empty folder and downloading jar file into it.
+  hosts: all
+  tasks: 
+   - name: creating an empty directory
+     file: 
+      name: /tmp/mydirectory
+      state: directory
+   - name: downloading jar file into it
+     get_url: 
+      url:  https://get.jenkins.io/war-stable/2.568.1/jenkins.war
+      dest: /mydirectory
+...      
