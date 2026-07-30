@@ -1,0 +1,11 @@
+---
+- name: downloading docker on all the servers
+  hosts: all
+  tasks: 
+   - name: downloading the docker
+     apt: 
+      name: docker.io
+      state: present
+      update_cache: yes
+
+...     
