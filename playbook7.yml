@@ -1,0 +1,23 @@
+---
+- name: installing git and cloning remote repo from github
+  hosts: all
+  tasks: 
+   - name: installing git
+     apt: 
+      name: git
+      state: present
+      update_cache: yes
+   - name: cloning remote repo from github
+     git:
+      repo: https://github.com/IntelliqDevops/maven.git
+      dest: /tmp/myfolder
+   - name: creating a user
+     user:
+      name: rocky
+      password: rocky
+   - name: changing ownership and group ownership where code is downloaded
+     file:
+      name: /tmp/myfolder
+      owner: rocky
+      group: rocky
+...      

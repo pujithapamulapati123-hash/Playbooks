@@ -1,0 +1,26 @@
+---
+- name: installing apache2 and editing default file and restarted and checking url
+  hosts: all
+  tasks:
+    - name: installing apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: modifying content
+      copy: 
+        content: "content modified by puja"
+        dest: /var/www/html/index.html    
+    - name: restarting service
+      service: 
+        name: apache2
+        state: restarted
+    - name: checking apache2 response on server1
+      uri:
+        url: http://172.31.24.168          
+        status_code: 200
+    - name: checking apache2 response on server2
+      uri:
+        url: http://172.31.19.197
+        status_code: 200
+...       

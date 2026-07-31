@@ -1,0 +1,11 @@
+---
+- name: by using global scope variables installing/uninstalling softwares
+  hosts: all
+  tasks: 
+   - name: installing/uninstalling softwares
+     apt: 
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+
+...
