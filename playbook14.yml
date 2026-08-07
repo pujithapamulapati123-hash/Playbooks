@@ -1,0 +1,30 @@
+---
+- name: host scope variables on single server
+  hosts: 172.31.24.168
+  tasks:
+    - name: creating user using host scope  variables on single server
+      user:
+        name: "{{a}}"
+        password: "{{b}}"
+        uid: "{{c}}"
+        home: "{{d}}"
+        shell: "{{e}}"
+        comment: "{{f}}"
+...        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      

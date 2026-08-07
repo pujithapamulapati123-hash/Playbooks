@@ -1,0 +1,16 @@
+---
+- name: installing softwraes using loops concept
+  hosts: all
+  tasks: 
+   - name: installing softwares
+     apt:
+      name: "{{item}}"
+      state: present
+      update_cache: yes
+     loop:
+       - tree
+       - git
+       - maven
+...       
+
+

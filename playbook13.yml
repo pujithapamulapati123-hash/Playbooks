@@ -1,0 +1,10 @@
+---
+- name: Implementing host scope variables
+  hosts: appserver
+  tasks:
+    - name: installing firewalld
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+...        

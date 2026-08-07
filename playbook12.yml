@@ -1,0 +1,14 @@
+---
+- name: using play scope variables and do installatons
+  hosts: all
+  vars:
+    a: tree
+    b: present
+    c: yes
+  tasks: 
+   - name: installing tree
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+...      
