@@ -1,0 +1,22 @@
+---
+- name: tags concept
+  hosts: all
+  gather_facts: false
+  become: yes
+  tasks: 
+   - name: Installing tree
+     apt:
+       name: tree
+       state: present 
+       update_cache: yes
+     tags: installation_tree
+   - name: user creation
+     user:
+      name: pujaji
+      password: pujaji
+     tags: user_creation
+   - name: copying files
+     copy:
+      src: /etc/passwd
+      dest: /tmp
+...  
